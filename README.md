@@ -1,4 +1,4 @@
-# README
+# IMPROVE-ED (IMPROVE EDUCATION)
 
 In this project we built an exclusive Learning Support Assistant platform.
 

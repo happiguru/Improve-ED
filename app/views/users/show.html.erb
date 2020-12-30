@@ -1,13 +1,9 @@
-<div class="columns">
+<div class="row">
 
-    <div class="w-1 pl-3">
+    <div class="col-4">
 
         <section class="users-section">
-            <div class="media-left mr-0 pt-3">
-                <figure class="image profile-pic">
-                    <img src="https://louisem.com/wp-content/uploads/2017/07/facebook-link-thumbnail-2017.jpg" height="100px" width="100px">
-                </figure>
-            </div>
+            <%= link_to 'Update Profile', edit_user_path, class: "bg-primary py-2 px-2 rounded mx-2 text-dark" %>
             <article class="timeline">
                 <ul class="posts">
                     <h3 class="box title mb-0 no-border">All Post</h3>
@@ -16,6 +12,5 @@
             </article>
         </section>
     </div>
-    <%= render 'profile' %>
 
 </div>

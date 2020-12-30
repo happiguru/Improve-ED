@@ -1,6 +1,15 @@
-<h1>Editing Post</h1>
+<div class="py-2">
+     <article class="media box">
+         <figure class="media-left">
+             <p class="image is-64x64">
 
-<%= render 'form', post: @post %>
+             </p>
+         </figure>
+         <div class="media-content">
+             <%= render 'form' %>
+         </div>
+     </article>
+     <%= link_to 'Show', root_path %> |
+     <%= link_to 'Back', posts_path %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+ </div>

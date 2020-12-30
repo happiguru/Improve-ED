@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_29_081734) do
+ActiveRecord::Schema.define(version: 2020_12_29_152515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.text "postcontent"
@@ -31,6 +40,16 @@ ActiveRecord::Schema.define(version: 2020_12_29_081734) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_replies_on_post_id"
+    t.index ["user_id"], name: "index_replies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,6 +71,16 @@ ActiveRecord::Schema.define(version: 2020_12_29_081734) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false
     t.boolean "superadmin", default: false
+    t.string "fullname"
+    t.text "personalstatement"
+    t.date "dob"
+    t.string "nationality"
+    t.string "gender"
+    t.string "contact"
+    t.string "designation"
+    t.string "address"
+    t.string "state"
+    t.string "countryofresidence"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true

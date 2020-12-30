@@ -11,16 +11,16 @@
             <div class="ml-2">
                 <h4 class="bg-secondary rounded">Learning Support Assistant</h4>
                 <div class="">
-                    Name: <%= link_to user.username, user_path(user), class: 'username' %>
+                    Name: <%= link_to user.fullname, user_path(user), class: 'username' %>
                 </div>
                 <div class="">
-                    Nationality: <%= user.firstname %>
+                    Nationality: <%= user.nationality %>
                 </div>
                 <div class="">
-                    Gender: <%= user.lastname %>
+                    Gender: <%= user.gender %>
                 </div>
                 <div class="">
-                    <h5>Career Objective</h5>
+                    <h5>Personal Statement</h5>
                     <p>
                         It is a long established fact that a reader will be distracted by the readable content of 
                         a page when looking at its layout. The point of using Lorem Ipsum is that it has a 

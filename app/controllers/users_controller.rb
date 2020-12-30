@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   def index
     @users = User.all
-   # @followed_and_user = current_user.followed_users
+    #.includes(%i[replies posts likes followed_users followers])
+    # @followed_and_user = current_user.followed_users
   end
 
   def show

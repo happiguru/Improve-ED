@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
+  get 'relationships/destroy'
+  get 'likes/create'
+  get 'likes/destroy'
+  get 'replies/new'
+  get 'replies/create'
+  get 'replies/destroy'
   get 'users/index'
   get 'users/show'
   get 'main/about'

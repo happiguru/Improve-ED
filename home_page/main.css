@@ -1,0 +1,10 @@
+/* .navItem{
+    text-align: center
+} */
+
+.nav-link{
+
+    border-radius: 8px;
+    background-color: orange;
+    margin: 5px;
+}

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'main/home'
   get 'main/about'
   get 'main/contact'
+  get 'main/terms'
+  get 'main/privacy'
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :posts do
     resources :replies, only: %i[create destroy]

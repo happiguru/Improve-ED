@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'replies/destroy'
   get 'users/index'
   get 'users/show'
+  get 'main/home'
   get 'main/about'
   get 'main/contact'
   devise_for :users, :controllers => { registrations: 'registrations' }

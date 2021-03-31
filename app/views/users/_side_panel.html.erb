@@ -22,6 +22,18 @@
         </div>
     </nav>
 <div class="side-links">
-    <a href="#" ><%= link_to 'HOME', root_path, class: "navbar-item" %></a>
-    <a href="#" ><%= link_to 'CONNECT', users_path, class: "navbar-item" %></a>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <%= link_to 'HOME', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'CONNECT', users_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Edit Profile', profiles_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to 'Edit Login Details', user_path(current_user), class: "nav-link" %>
+        </li>
+    </ul>
 </div>

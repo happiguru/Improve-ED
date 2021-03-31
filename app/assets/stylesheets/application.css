@@ -26,6 +26,12 @@
 
 }
 
+.mainbg {
+	background-image: url( <%= asset_path 'bg/kids2.jpg' %>);
+	background-repeat: no-repeat;
+	background-size:100% ,100%;
+  } 
+
 /* Footer code starts here */
 
 .footer{

@@ -1,0 +1,45 @@
+<div class="row">
+  <aside class="col-12 col-md-3">
+    <%= side_panel_on %>
+  </aside>
+  <section class="col-12 col-md-9">
+    <h3>Find your LSA</h3>
+    <div class="">
+      <% @profiles.each do |profile| %>
+      <article class="d-flex">
+        <div class="thumbnail">
+          <figure class="">
+            <% if profile.picture.attached? %>
+              <%= image_tag profile.picture, class: "rounded-circle d-block", width: "50px", height: "50px" %>
+              <% else %>
+                <img class="rounded-circle d-block" src="https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" width="100px" height="100px" alt="" />
+            <% end %>
+          </figure>
+        </div>
+        <div class="ml-2">
+          <h4 class="bg-secondary rounded">Learning Support Assistant</h4>
+          <div class="">
+            Full name: <%= link_to profile.first_name + " " + profile.last_name, profile_path(profile), class: 'menu-link' %>
+          </div>
+          <div class="">
+            Nationality: <%= profile.nationality %>
+          </div>
+          <div class="">
+            Gender: <%= profile.gender %>
+          </div>
+          <div class="">
+            <h5>Personal Statement</h5>
+            <p>
+              <%= profile.personal_statement %>
+            </p>
+          </div>
+        </div>
+      </article>
+      <% end %>
+      <div>
+        <section></section>
+      </div>
+    </div>
+  </section>
+</div>
+

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def edit; end
 
-  # PATCH/PUT /posts/1
+  # PATCH/PUT /usersS/1
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -26,5 +26,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.order('created_at DESC')
+  end
+
+  def user_params
+    params.require(:user).permit!
   end
 end

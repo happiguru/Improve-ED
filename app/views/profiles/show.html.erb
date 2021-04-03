@@ -25,6 +25,11 @@
                 <p>
                   <%= @profile.personal_statement %>
                 </p>
+                <h6>Academic Profile</h6>
+                <p>
+                  <strong>School:</strong> <%= @profile.school %> <br>
+                  <strong>Highest Qualification:</strong> <%= @profile.highest_qualification %>
+                </p>
               </div>
             </div>
             <!--/row-->
@@ -32,6 +37,30 @@
           <div class="tab-pane" id="messages">
             <div class="alert alert-info alert-dismissable">
               <a class="panel-close close" data-dismiss="alert">×</a>
+              <p>
+                <strong>Institution:</strong>
+                <%= @profile.institution %>
+              </p>
+              <p>
+                <strong>Job Title:</strong>
+                <%= @profile.job_title %>
+              </p>
+              <p>
+                <strong>Start Date:</strong>
+                <%= @profile.start_date %>
+              </p>
+              <p>
+                <strong>End Date:</strong>
+                <%= @profile.end_date %>
+              </p>
+              <p>
+                <strong>Reference Name:</strong>
+                <%= @profile.reference_name %>
+              </p>
+              <p>
+                <strong>Reference Email:</strong>
+                <%= @profile.reference_email %>
+              </p>
               <p>
                 <strong>Gender:</strong>
                 <%= @profile.gender %>
@@ -57,6 +86,10 @@
             <p>
               <strong>Phone number:</strong>
               <%= @profile.phone_number %>
+            </p>
+            <p>
+              <strong>Download CV:</strong>
+              <%= image_tag @profile.cv_upload, class: "rounded-circle d-block", width: "70px", height: "70px" %>
             </p>
           </div>
         </div>

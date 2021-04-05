@@ -1,109 +1,111 @@
-<div class="row">
-  <aside class="col-12 col-md-3">
-    <%= side_panel_on %>
-  </aside>
-  <div class="col-12 col-md-9 border align-content-center">
-    <div class="row my-2">
-      <div class="col-lg-9 order-lg-2">
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a href="" data-target="#messages" data-toggle="tab" class="nav-link">Work Experience</a>
-          </li>
-          <li class="nav-item">
-            <a href="" data-target="#edit" data-toggle="tab" class="nav-link">contact</a>
-          </li>
-        </ul>
-        <div class="tab-content py-4">
-          <div class="tab-pane active" id="profile">
-            <h5 class="mb-3">User Profile</h5>
-            <div class="row">
-              <div class="col-md-10">
-                <h6>Personal Statement</h6>
+<div class="container">
+  <div class="row">
+    <aside class="col-12 col-md-3">
+      <%= side_panel_on %>
+    </aside>
+    <div class="col-12 col-md-9 border align-content-center">
+      <div class="row my-2">
+        <div class="col-lg-9 order-lg-2">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a href="" data-target="#messages" data-toggle="tab" class="nav-link">Work Experience</a>
+            </li>
+            <li class="nav-item">
+              <a href="" data-target="#edit" data-toggle="tab" class="nav-link">contact</a>
+            </li>
+          </ul>
+          <div class="tab-content py-4">
+            <div class="tab-pane active" id="profile">
+              <h5 class="mb-3">User Profile</h5>
+              <div class="row">
+                <div class="col-md-10">
+                  <h6>Personal Statement</h6>
+                  <p>
+                    <%= @profile.personal_statement %>
+                  </p>
+                  <h6>Academic Profile</h6>
+                  <p>
+                    <strong>School:</strong> <%= @profile.school %> <br />
+                    <strong>Highest Qualification:</strong> <%= @profile.highest_qualification %>
+                  </p>
+                </div>
+              </div>
+              <!--/row-->
+            </div>
+            <div class="tab-pane" id="messages">
+              <div class="alert alert-info alert-dismissable">
+                <a class="panel-close close" data-dismiss="alert">×</a>
                 <p>
-                  <%= @profile.personal_statement %>
+                  <strong>Institution:</strong>
+                  <%= @profile.institution %>
                 </p>
-                <h6>Academic Profile</h6>
                 <p>
-                  <strong>School:</strong> <%= @profile.school %> <br>
-                  <strong>Highest Qualification:</strong> <%= @profile.highest_qualification %>
+                  <strong>Job Title:</strong>
+                  <%= @profile.job_title %>
+                </p>
+                <p>
+                  <strong>Start Date:</strong>
+                  <%= @profile.start_date %>
+                </p>
+                <p>
+                  <strong>End Date:</strong>
+                  <%= @profile.end_date %>
+                </p>
+                <p>
+                  <strong>Reference Name:</strong>
+                  <%= @profile.reference_name %>
+                </p>
+                <p>
+                  <strong>Reference Email:</strong>
+                  <%= @profile.reference_email %>
+                </p>
+                <p>
+                  <strong>Gender:</strong>
+                  <%= @profile.gender %>
+                </p>
+
+                <p>
+                  <strong>Date of birth:</strong>
+                  <%= @profile.date_of_birth %>
+                </p>
+
+                <p>
+                  <strong>Designation:</strong>
+                  <%= @profile.designation %>
                 </p>
               </div>
             </div>
-            <!--/row-->
-          </div>
-          <div class="tab-pane" id="messages">
-            <div class="alert alert-info alert-dismissable">
-              <a class="panel-close close" data-dismiss="alert">×</a>
+            <div class="tab-pane" id="edit">
               <p>
-                <strong>Institution:</strong>
-                <%= @profile.institution %>
-              </p>
-              <p>
-                <strong>Job Title:</strong>
-                <%= @profile.job_title %>
-              </p>
-              <p>
-                <strong>Start Date:</strong>
-                <%= @profile.start_date %>
-              </p>
-              <p>
-                <strong>End Date:</strong>
-                <%= @profile.end_date %>
-              </p>
-              <p>
-                <strong>Reference Name:</strong>
-                <%= @profile.reference_name %>
-              </p>
-              <p>
-                <strong>Reference Email:</strong>
-                <%= @profile.reference_email %>
-              </p>
-              <p>
-                <strong>Gender:</strong>
-                <%= @profile.gender %>
+                <strong>Email address:</strong>
+                <%= @profile.email_address %>
               </p>
 
               <p>
-                <strong>Date of birth:</strong>
-                <%= @profile.date_of_birth %>
+                <strong>Phone number:</strong>
+                <%= @profile.phone_number %>
               </p>
-
               <p>
-                <strong>Designation:</strong>
-                <%= @profile.designation %>
+                <strong>Download CV:</strong>
+                <%= image_tag @profile.cv_upload, class: "rounded-circle d-block", width: "70px", height: "70px" %>
               </p>
             </div>
           </div>
-          <div class="tab-pane" id="edit">
-            <p>
-              <strong>Email address:</strong>
-              <%= @profile.email_address %>
-            </p>
-
-            <p>
-              <strong>Phone number:</strong>
-              <%= @profile.phone_number %>
-            </p>
-            <p>
-              <strong>Download CV:</strong>
-              <%= image_tag @profile.cv_upload, class: "rounded-circle d-block", width: "70px", height: "70px" %>
-            </p>
-          </div>
         </div>
-      </div>
-      <div class="col-lg-3 order-lg-1 text-center">
-        <p>
-          <% if @profile.picture.attached? %> <%= image_tag @profile.picture, class: "rounded-circle d-block", width: "70px", height: "70px" %> <% else %>
-          <img src="//placehold.it/150" class="mx-auto img-fluid rounded-circle d-block" alt="avatar" />
-          <% end %>
-        </p>
-        <h6 class="mt-2">Name: <%= @profile.first_name + " " + @profile.last_name %></h6>
-        <h6 class="mt-2">Nationality: <%= @profile.nationality %></h6>
-        <h6 class="mt-2">Location: <%= @profile.nationality %></h6>
-        <%= link_to 'Edit', edit_profile_path(@profile) %> | <%= link_to 'Back', profiles_path %>
+        <div class="col-lg-3 order-lg-1 text-center">
+          <p>
+            <% if @profile.picture.attached? %> <%= image_tag @profile.picture, class: "rounded-circle d-block", width: "70px", height: "70px" %> <% else %>
+            <img src="//placehold.it/150" class="mx-auto img-fluid rounded-circle d-block" alt="avatar" />
+            <% end %>
+          </p>
+          <h6 class="mt-2">Name: <%= @profile.first_name + " " + @profile.last_name %></h6>
+          <h6 class="mt-2">Nationality: <%= @profile.nationality %></h6>
+          <h6 class="mt-2">Location: <%= @profile.nationality %></h6>
+          <%= link_to 'Edit', edit_profile_path(@profile) %> | <%= link_to 'Back', profiles_path %>
+        </div>
       </div>
     </div>
   </div>

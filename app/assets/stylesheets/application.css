@@ -27,7 +27,7 @@
 }
 
 .mainbg {
-	background-image: url( <%= asset_path 'bg/kids2.jpg' %>);
+	background-image: url('bg/kids2.jpg');
 	background-repeat: no-repeat;
 	background-size:100% ,100%;
   } 

@@ -1,0 +1,55 @@
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.navbar-nav.navbar-right {
+    position: absolute;
+    left:90%;
+    transform: translatex(-50%);
+}
+
+.background_img{
+    background-image: url('../images/kids.jpg');
+    background-size: cover;
+   
+    height: 100vh;
+}
+
+.fa-search
+{
+    font-size: 32px;
+    color:rgba(53, 100, 231, 0.897);
+}
+
+.image-aboutus-banner{
+    background-image: url('../images/kids2.jpg');
+    background-size: cover;
+    
+}
+
+.about_img img{
+    width:50%;
+    height: 70%;
+}
+
+.team-box  img{
+    width:50%;
+    height: 70%;
+}
+
+
+.map-container{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    }
+    .map-container iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    }

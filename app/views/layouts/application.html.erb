@@ -12,45 +12,135 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
       <div class="container">
-        <a class="navbar-brand" href="/">Improved</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="http://localhost:3000/main/home">
+            <%= image_tag ("/assets/logo/Improv_logo.png"), class: "img-responsive logo-image"%>
+          </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="nav navbar-nav align-content-center">
+            <li class="nav-item">
+              <%= link_to 'Home', main_home_path, class: "nav-link mx-1 rounded text-dark" %>
             </li>
             <li class="nav-item">
-              
+              <%= link_to 'ILS List', root_path, class: "nav-link mx-1 rounded text-dark" %>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="">Info</a>
+            <li class="nav-item">
+              <%= link_to 'Post', posts_path, class: "nav-link mx-1 rounded text-dark" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'About', main_about_path, class: "nav-link mx-1 rounded text-dark" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Contact', main_contact_path, class: "nav-link mx-1 rounded text-dark" %>
             </li>
           </ul>
-          <p class="navbar-text float-right">
-            
-          </p>
+          <ul class="nav navbar-nav ml-auto">
+            <% if current_user %> <%= link_to 'New Post', new_post_path, class: "nav-item bg-primary py-2 px-2 rounded mx-2 text-dark" %> <%= link_to 'Sign Out', destroy_user_session_path, class: " nav-item bg-danger text-dark py-2 px-2
+            rounded", method: :delete %> <% else %> <%= link_to 'Sign In', new_user_session_path, class: "nav-item bg-primary py-2 px-2 rounded mx-2 text-dark" %> <%= link_to 'Sign Up', new_user_registration_path, class: "nav-item bg-danger
+            text-dark py-2 px-2 rounded" %> <% end %>
+          </ul>
+        </div>
       </div>
     </nav>
-    <div class="container">
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-       <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-       <%= yield %>
+    <div id="root">
+        <%= flash_notice %>
+        <%= flash_alert %>
+          <%= yield %>
     </div>
-    <footer>
-      <div class="container">
-        ImproveEd (Lekunze) <%= Time.now.year %>
-      </div>
-    </footer>
+    <footer class="footer container-fluid mt-5">
+        <div class="row">
+          <div class="col-md-3 m-b-30">
+            <div class="footer-title m-t-5 m-b-20 p-b-8">
+              About us
+            </div>
+            <p class="white-text">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 text of the printing.
+            </p>
+          </div>
+          <div class="col-md-3 m-b-30">
+            <div class="footer-title m-t-5 m-b-20 p-b-8">
+              Latest themes
+            </div>
+            <div class="footer-links">
+              <a href="#">
+                Appointment
+              </a>
+              <a href="#">
+                Health center
+              </a>
+              <a href="#">
+                Quality
+              </a>
+              <a href="#">
+                Wallstreet
+              </a>
+            </div>
+          </div>
+          <div class="col-md-3 m-b-30">
+            <div class="footer-title m-t-5 m-b-20 p-b-8">
+              Quick Links
+            </div>
+            <div class="footer-links">
+              <a href="#">
+                Blog
+              </a>
+              <a href="#">
+                FAQ
+              </a>
+              <%= link_to 'Terms of use', main_terms_path, class: "" %>
+              <%= link_to 'Privacy policy', main_privacy_path, class: "" %>
+            </div>
+          </div>
+          <div class="col-md-3 m-b-30">
+            <div class="footer-title m-t-5 m-b-20 p-b-8">
+              Support
+            </div>
+            <div class="footer-links">
+              <a href="#">
+                Affiliate
+              </a>
+              <a href="#">
+                Login
+              </a>
+              <a href="#">
+                All theme package
+              </a>
+              <a href="#">
+                Support forum
+              </a>
+            </div>
 
-     <script src="https://kit.fontawesome.com/cbdf2b0f0e.js" crossorigin="anonymous"></script>
+            <div class="footer-social-links m-t-30">
+              <li>
+                <a href="#">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-youtube" aria-hidden="true"></i>
+                </a>
+              </li>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+      Copyright © <%= Time.now.year %>, All Rights Reserved
+      ImproveEd (Lekunze)
+    </div>
+
+    <script src="https://kit.fontawesome.com/cbdf2b0f0e.js" crossorigin="anonymous"></script>
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 

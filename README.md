@@ -9,6 +9,10 @@ This project was built with:
 - Rubocop Linters
 - Devise
 
+## Live View
+
+[Click Here to View Live](https://secret-spire-79246.herokuapp.com/)
+
 ## 🛠 Getting Started
 ## Install 
 In order to run, you need to install Ruby in your computer. For windows you can go to [Ruby installer](https://rubyinstaller.org/) and for MAC and LINUX you can go to [Ruby official site](https://www.ruby-lang.org/en/downloads/) for intructions on how to intall it.

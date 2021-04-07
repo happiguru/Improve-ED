@@ -4,7 +4,7 @@
             <figure class=" thumb">
                 <img class="rounded-circle" src="https://louisem.com/wp-content/uploads/2017/07/facebook-link-thumbnail-2017.jpg" height="100px" width="100px">
             </figure>
-            <%= link_to 'PROFILE', user_path(current_user), class: "navbar-item" %>  
+            <%= current_user.firstname + "`s " %><%= link_to 'Profile', user_path(current_user), class: "navbar-item" %>  
         </div>
         <div class="d-flex">
             <div class="panel-block mr-1 text-center">

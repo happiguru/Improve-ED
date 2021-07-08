@@ -1,6 +1,11 @@
 # IMPROVE-ED (IMPROVE EDUCATION)
 
-In this project we built an exclusive Learning Support Assistant platform.
+For parents, job seekers, and employers, this initiative offers a Learning Support Assistance Platform. Developed entirely in Ruby on Rails. Authenticated users are given access to the entire website's functionality.
+
+- An authenticated user(parent or teacher) can find Learning Support Assistant for their kids
+- A dedicated admin user who educates and give update to every Learning Support Assistant on the platform
+- Offers Training and feedbacks to Learning support assistants
+- Consumes payment gateway for individual LSA to pay for specific trainings.
 
 This project was built with:
 

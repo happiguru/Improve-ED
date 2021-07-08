@@ -1,4 +1,6 @@
-# IMPROVE-ED (IMPROVE EDUCATION)
+![visitors](https://visitor-badge.glitch.me/badge?page_id=happiguru/Improve-ED)
+
+## IMPROVE-ED (IMPROVE EDUCATION)
 
 For parents, job seekers, and employers, this initiative offers a Learning Support Assistance Platform. Developed entirely in Ruby on Rails. Authenticated users are given access to the entire website's functionality.
 
